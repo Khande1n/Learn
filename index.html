@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  </head>
+    <style type="text/css">
+      input {
+        width: 70%;
+      }
+
+      li {
+        border: 5px;
+        background-color: #d3d3d3;
+        border-color: #aaa;
+        padding: 5px;
+        margin: 10px;
+      }
+
+      li button {
+        float: right;
+      }
+
+    </style>
+    <body>
+      <h1>
+        Work: To-Do Project Submission
+      </h1>
+      <p>
+         This is a to-do app
+      </p>
+      <input type="text" placeholder="Write your to-do here and then press enter" id="myInput" />
+      <div>
+        <ul>
+
+        </ul>
+      </div>
+    </body>
+    <script type="text/javascript">
+        const input = document.querySelector('input');
+
+      input.addEventListener('change', (event) => {
+        const ul = document.querySelector('ul');
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(input.value));
+        li.setAttribute('id', input.value);
+        const button = document.createElement('button');
+        button.setAttribute('id', input.value);
+        button.innerHTML = "X";
+        button.setAttribute('onclick', 'deleteRow(this.id)');
+        li.appendChild(button);
+        ul.appendChild(li);
+
+        input.value = "";
+      })
+
+
+      deleteRow = (id) =>  {
+        const element = document.getElementById(id);
+        element.parentNode.removeChild(element);
+      }
+    </script>
+  </head>
+<html>
