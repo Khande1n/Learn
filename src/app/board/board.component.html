@@ -1,0 +1,23 @@
+<p>
+  Please enter width: <input (keyup)="onKey($event)">
+</p>
+<p>Width: {{width}}</p>
+<p *ngIf="width">
+  Enter height: <input (keyup)="onKey1($event)">
+</p>
+<p *ngIf="width">Height: {{height}}</p>
+
+<!-- <div *ngFor="let arr of randomArr">{{arr}}</div> -->
+<div *ngIf="heightArr && widthArr">
+  <p *ngIf="randomArr.length===0">You have won the Game in {{moves}} moves</p>
+  <button (click)="startGame()">Start Game</button>
+  <table>
+    <tbody (keyup)="onMove($event)">
+      <tr *ngFor="let z of heightArr; index as h1;">
+        <td *ngFor="let i of widthArr; index as w1;">
+          <app-box [xcord]="w1" [ycord]="h1" [playerLocation]="playerLocation" [greenBox]="randomArr"></app-box>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

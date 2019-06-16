@@ -1,0 +1,10 @@
+<div *ngIf="xcord !== playerLocation[0] && !showGreen || ycord !== playerLocation[1] &&!showGreen">
+  {{xcord}}, {{ycord}}
+</div>
+<div *ngIf="xcord === playerLocation[0] && ycord === playerLocation[1]&&!showGreen">
+  <img src="../../assets/img/player.png">
+</div>
+<div *ngIf="showGreen">
+  <img
+    src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Findividual.icons-land.com%2FIconsPreview%2FBaseSoftware%2FPNG%2F16x16%2FClose_Box_Green.png&f=1">
+</div>
